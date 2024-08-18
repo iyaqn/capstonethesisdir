@@ -142,7 +142,8 @@
         <a href="#">Privacy Policy</a> |
         <a href="#">UST website</a> |
         <a href="{{ route('student.login') }}">Student Log In</a> |
-        <a href="{{ route('admin.login') }}">Admin Log In</a>
+        <a href="{{ route('admin.login') }}">Admin Log In</a> | 
+        <a href="{{ route('faculty.login') }}">Faculty Log In</a>
     </div>
     <p>UST Blessed Pier Giorgio Frassati Building, España Blvd, Sampaloc, Manila, 1000 Metro Manila</p>
 </div>

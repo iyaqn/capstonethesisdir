@@ -17,15 +17,15 @@ use App\Http\Controllers\Auth\StudentLoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('admin/login', [AdminLoginController::class, 'login']);
 
-Route::get('student/login', [StudentLoginController::class, 'showLoginForm'])->name('student.login');
+Route::get('/', [StudentLoginController::class, 'showLoginForm'])->name('student.login');
 Route::post('student/login', [StudentLoginController::class, 'login']);
 
 Route::get('faculty/login', [FacultyLoginController::class, 'showLoginForm'])->name('faculty.login');

@@ -1,5 +1,20 @@
 
 <style>
+        .forgot-create-container {
+        display: flex;
+        justify-content: space-between; /* Ensures the items are on opposite sides */
+        margin-bottom: 20px;
+        }
+
+        .forgot-create-container a {
+            color: #a4231c;
+            text-decoration: none;
+        }
+
+        .forgot-create-container a:hover {
+            text-decoration: underline;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -88,6 +103,54 @@
             background-color: #7a1914;
         }
 
+        .google-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .google-button img {
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    .google-button:hover {
+        background-color: #357ae8;
+    }
+
+    .divider {
+    margin: 20px 0;
+    text-align: center;
+    color: black;
+    position: relative;
+    width: 100%;
+    }
+
+    .divider:before, .divider:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #ddd;
+    }
+
+    .divider:before {
+        left: 0;
+    }   
+
+    .divider:after {
+        right: 0;
+    }
+
         .footer-bar {
             background-color: #a4231c;
             color: white;
@@ -130,9 +193,17 @@
                     <label for="password">Password:</label>
                     <input id="password" type="password" name="password" required autocomplete="current-password">
                 </div>
-                <a href="{{ route('password.request') }}" class="forgot-password">Forgot password?</a>
+                <div class="forgot-create-container">
+                    <a href="{{ route('register') }}" class="create-account">Create Account</a>
+                    <a href="{{ route('password.request') }}" class="forgot-password">Forgot password?</a>
+                </div>
                 <button type="submit" class="login-button">Login</button>
             </form>
+            <div class="divider">or</div>
+                    <button class="google-button">
+                        Sign in with Google
+                    </button>
+                    </div>
         </div>
     </div>
 
