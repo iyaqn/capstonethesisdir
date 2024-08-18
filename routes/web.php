@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\Auth\FacultyLoginController;
+use App\Http\Controllers\Auth\StudentLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [AdminLoginController::class, 'login']);
+
+Route::get('student/login', [StudentLoginController::class, 'showLoginForm'])->name('student.login');
+Route::post('student/login', [StudentLoginController::class, 'login']);
+
+Route::get('faculty/login', [FacultyLoginController::class, 'showLoginForm'])->name('faculty.login');
+Route::post('faculty/login', [FacultyLoginController::class, 'login']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
